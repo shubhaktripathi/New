@@ -1,0 +1,53 @@
+<!--
+  @Shubhamm          : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-30-2023
+  @last modified by  : Shubham
+-->
+<template>
+
+   <lightning-card title="Accounts" icon-name="custom:custom63">
+      <b>THIS IS THIRD COMPONENTS</b>
+
+      <div class="slds-m-around_medium">
+
+         <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+               <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Car_Model__c</th>
+                  <th>Car_Type__c</th>
+                  <th>Price__c/24hr</th>
+               </tr>
+            </thead>
+            <tbody>
+               <template for:each={bookCar} for:item="a">
+
+                  <tr key={a.Id}>
+
+                     <td> {a.Id} </td>
+                     <td> {a.Name} </td>
+                     <td> {a.Car_Model__c} </td>
+                     <td> {a.Car_Type__c} </td>
+                     <td> {a.Price__c} </td>
+                  </tr>
+               </template>
+
+
+            </tbody>
+         </table>
+         <!-- <lightning-datatable
+               
+                  key-field="Id"
+                  data= {bookings}  
+                  columns={columns}
+                  hide-checkbox-column="true"
+                  show-row-number-column="true"
+                 
+                  >
+              </lightning-datatable>  -->
+      </div>
+   </lightning-card>
+</template>

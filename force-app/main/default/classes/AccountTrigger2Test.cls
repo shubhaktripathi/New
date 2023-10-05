@@ -1,0 +1,92 @@
+@isTest
+private class AccountTrigger2Test {
+    // Validate the positive test scenario for insertion
+    // Insert an account which has the Industry as 'Agriculture'
+    // Assert that Opportunity should be created
+    // Assert the values in Opportunity fields.
+
+  /* @isTestSetup // Test Data Setup
+   static void makeData(){
+    
+   }*/ 
+
+   @isTest 
+   static void test_AccountTrigger2(){
+    Account newAcc= new Account(Industry='Agriculture', Name='Test Account', BillingCity='Kanpur');
+    Test.startTest();
+    insert newAcc;
+    Test.stopTest();
+    List<Opportunity> insertedOpp = [Select Id, Account.Name, CloseDate, Amount , StageName
+    From Opportunity Where AccountId = :newAcc.Id];
+    system.assertEquals(1, insertedOpp.size(), 'only 1 opp should be inserted for Account');
+    system.assertEquals(newAcc.Name, insertedOpp[0].Account.Name, 'Inserted Opportunity does not have the expected account');
+    System.assertEquals(System.today() + 90, insertedOpp[0].CloseDate, 'Close Date is not as expected.');
+    //System.assertEquals(0, insertedOpp[0].Amount, 'Amount in the inserted opportunity should be 0');
+   }
+   // Validate the positive test scenario for updation
+    // Update an account which has the Industry as 'Agriculture'
+    // Assert that Opportunity should be created
+    // Assert the values in Opportunity fields.
+
+    @isTest
+    static void test_afterUpdate_positive() {
+        Account newAcc = new Account(Name='TestAccount', Industry='Biotechnology');
+        insert newAcc;
+        // Check that there should not be any opportunity created for the above account
+        List<Opportunity> insertedOpp = [Select Id, Account.Name, CloseDate, Amount 
+                                         From Opportunity Where AccountId = :newAcc.Id];
+        System.assertEquals(0, insertedOpp.size(), '0 opportunity should be inserted for the Account');
+        // Update the account Industry to 'Agriculture' and assert that opportunity should be created
+        Test.startTest();
+            newAcc.Industry = 'Agriculture';
+            update newAcc;
+        Test.stopTest();
+        List<Opportunity> newInsertedOpp = [Select Id, Account.Name, CloseDate, Amount 
+        From Opportunity Where AccountId = :newAcc.Id];
+System.assertEquals(1, newInsertedOpp.size(), 'Only 1 opportunity should be inserted for the Account');
+System.assertEquals(newAcc.Name, newInsertedOpp[0].Account.Name, 'Inserted Opportunity does not have the expected account.');
+System.assertEquals(System.today() + 90, newInsertedOpp[0].CloseDate, 'Close Date is not as expected.');
+//System.assertEquals(0, newInsertedOpp[0].Amount, 'Amount in the inserted opportunity should be 0');
+        
+    }
+   
+     // Validate the negative test scenario for insertion
+    // Insert an account which does not have the Industry as 'Agriculture'
+    // Assert that Opportunity should not be created
+    @isTest
+    static void test_afterInsert_negative() {
+        Account newAcc = new Account(Name='TestAccount', Industry='Biotechnology');
+        
+        Test.startTest();
+            insert newAcc;
+        Test.stopTest();
+        
+        List<Opportunity> insertedOpp = [Select Id, Account.Name, CloseDate, Amount 
+                                         From Opportunity Where AccountId = :newAcc.Id];
+        System.assertEquals(0, insertedOpp.size(), '0 opportunity should be inserted for the Account');
+    }
+      // Validate the negative test scenario for updation
+    // Update an account when the field Industry is not updated to 'Agriculture'
+    // Assert that Opportunity should not be created
+    @isTest
+    static void test_afterUpdate_negative() {
+        Account newAcc = new Account(Name='TestAccount', Industry='Biotechnology');
+        insert newAcc;
+        
+        // Check that there should not be any opportunity created for the above account
+        List<Opportunity> insertedOpp = [Select Id, Account.Name, CloseDate, Amount 
+                                         From Opportunity Where AccountId = :newAcc.Id];
+        System.assertEquals(0, insertedOpp.size(), '0 opportunity should be inserted for the Account');
+        
+        // Update the account Industry to 'Agriculture' and assert that opportunity should be created
+        Test.startTest();
+            newAcc.Industry = 'Education';
+            update newAcc;
+        Test.stopTest();
+        
+        List<Opportunity> newInsertedOpp = [Select Id, Account.Name, CloseDate, Amount 
+                                         From Opportunity Where AccountId = :newAcc.Id];
+        System.assertEquals(0, newInsertedOpp.size(), '0 opportunity should be inserted for the Account');
+    }
+    
+}

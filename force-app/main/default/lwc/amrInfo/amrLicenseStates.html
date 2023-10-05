@@ -1,0 +1,114 @@
+<template>
+   <progress value="3" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+
+               <lightning-layout horizontal-align="center">
+                <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+
+                     <button data-id='three' class="slds-button back_btn" onclick={backHandler}><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={stateErr} class="error validation_box">
+                      <h4 class="val_heading">There is a problem</h4>
+                        <ul>  <p class="error_text">Select the State or Territory your licence is issued in </p> </ul>
+                     </div>
+                     <div>
+                        <h3 class="step_heading"><strong>Step 3 of 11</strong></h3>
+                     </div>
+                     
+
+                    
+                     <h1 class="main_heading"><strong>What State or Territory is your licence issued in?</strong></h1>
+                     <div class={stateCss}> 
+                     <h1 if:true={stateErr} class="error_label slds-p-bottom_medium">Select the State or Territory your licence is issued in</h1>
+                     <!--div class="slds-var-p-bottom_small licence_territory_radio" onchange={stateHandler}>
+                        <input type="radio" id="1" name="Choice" value="New South Wales">
+                        <label for="1"> New South Wales </label><br><br>
+                        <input type="radio" id="2" name="Choice" value="Victoria">
+                        <label for="2"> Victoria </label><br><br>
+                        <input type="radio" id="3" name="Choice" value="Queensland">
+                        <label for="3"> Queensland </label><br><br>
+                        <input type="radio" id="4" name="Choice" value="South Australia">
+                        <label for="4"> South Australia </label><br><br>
+                        <input type="radio" id="5" name="Choice" value="Tasmania">
+                        <label for="5"> Tasmania </label><br><br>
+                        <input type="radio" id="6" name="Choice" value="Northern Territory">
+                        <label for="6"> Northern Territory </label><br><br>
+                        <input type="radio" id="7" name="Choice" value="Western Australia">
+                        <label for="7"> Western Australia </label>
+                     </div-->
+                     <fieldset class="slds-form-element">
+                        <div class="slds-form-element__control radio_sec" onchange={stateHandler}>
+
+                          <span class="slds-radio">
+                            <input type="radio" id="1" value="New South Wales" name="Choice" />
+                            <label class="slds-radio__label" for="1">
+                              <span class="slds-radio_faux"></span>
+                              <span class="slds-form-element__label">New South Wales</span>
+                            </label>
+                          </span>
+
+                          <span class="slds-radio">
+                            <input type="radio" id="2" value="Victoria" name="Choice" />
+                            <label class="slds-radio__label" for="2">
+                              <span class="slds-radio_faux"></span>
+                              <span class="slds-form-element__label">Victoria</span>
+                            </label>
+                          </span>
+
+                          <span class="slds-radio">
+                           <input type="radio" id="3" value="Queensland" name="Choice" />
+                           <label class="slds-radio__label" for="3">
+                             <span class="slds-radio_faux"></span>
+                             <span class="slds-form-element__label">Queensland</span>
+                           </label>
+                         </span>
+
+                         <span class="slds-radio">
+                           <input type="radio" id="4" value="South Australia" name="Choice" />
+                           <label class="slds-radio__label" for="4">
+                             <span class="slds-radio_faux"></span>
+                             <span class="slds-form-element__label">South Australia</span>
+                           </label>
+                         </span>
+
+                         <span class="slds-radio">
+                           <input type="radio" id="5" value="Tasmania" name="Choice" />
+                           <label class="slds-radio__label" for="5">
+                             <span class="slds-radio_faux"></span>
+                             <span class="slds-form-element__label">Tasmania</span>
+                           </label>
+                         </span>
+
+                         <span class="slds-radio">
+                           <input type="radio" id="6" value="Northern Territory" name="Choice" />
+                           <label class="slds-radio__label" for="6">
+                             <span class="slds-radio_faux"></span>
+                             <span class="slds-form-element__label">Northern Territory</span>
+                           </label>
+                         </span>
+
+                         <span class="slds-radio">
+                           <input type="radio" id="7" value="Western Australia" name="Choice" />
+                           <label class="slds-radio__label" for="7">
+                             <span class="slds-radio_faux"></span>
+                             <span class="slds-form-element__label">Western Australia</span>
+                           </label>
+                         </span>
+                        </div>
+                      </fieldset>
+                  </div>
+                     <br>
+                     <button data-id='five' onclick={clickHandler}
+                        class="slds-button_brand slds-var-p-top_medium govuk-button">Continue <i
+                           class="arrow2 right"></i></button>
+                     <br>
+                  </lightning-layout-item>
+               </lightning-layout>
+            </div>
+         </div>
+      </form>
+   </lightning-card>
+</template>

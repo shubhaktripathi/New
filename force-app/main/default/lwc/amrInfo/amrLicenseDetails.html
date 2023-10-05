@@ -1,0 +1,134 @@
+<template>
+   <progress value="2" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+               <!-- <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="2"  role="progressbar">
+                   <span class="slds-progress-bar__value" style="width:2/12">
+                     <span class="slds-assistive-text">Progress: 2/12</span>
+                   </span></div> -->
+
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10">
+
+                     <button data-id='two' onclick={backHandler} class="slds-button back_btn"><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={err2} class="validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                        <div>
+                           <ul class="error">
+                              <p class="error_text">Enter the name of your licence</p>
+
+                           </ul>
+                           <ul class="error">
+                              <p class="error_text">Enter your licence number</p>
+                           </ul>
+                           <ul class="error">
+                              <p class="error_text">Enter an expiry date</p>
+                           </ul>
+                        </div>
+                     </div>
+                     <div>
+
+                        <h3 class="step_heading"><strong>Step 2 of 11</strong></h3>
+                     </div>
+                     <h1 class="main_heading slds-var-p-top-x-small"><strong>Licence details</strong></h1>
+                     <div class={licNamCss}>
+                        <div class="slds-grid slds-wrap">
+                           <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12 ">
+                              <p class="licen_title deskocc_head slds-var-p-bottom_small">What is the name of your licence?</p>
+                              <p if:true={licNam} class="licen_desc error error_label slds-var-p-bottom_small">Enter the
+                                 name of your licence</p>
+                              <p if:false={licNam} class="licen_desc slds-var-p-bottom_small">Include a sub-class if relevant</p>
+                              <input type="text" id="subclass" name="name" size="30" class={licInputCss}
+                                 onkeyup={detailHandler1}>
+                           </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                     <div class={licNumCss}>
+                        <div class="slds-grid slds-wrap">
+                           <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                              <p class="licen_title slds-var-p-bottom_small">What is the licence number?</p>
+                              <p if:true={licNum} class="licen_title error error_label slds-var-p-bottom_small">Enter
+                                 your licence number</p>
+
+                              <input type="text" id="licencenumber" name="name" size="30" class={licInputCss}
+                                 onkeyup={detailHandler2}>
+
+                           </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+
+                     <div class={licDayCss}>
+                        <div>
+                           <p class="licen_title slds-var-p-bottom_small">When does it expire?</p>
+                           <p if:false={licDay} class="licen_desc">For example, 30 06 2024</p>
+                        </div>
+                        <p if:true={licDay} class="licen_desc error error_label">Enter an expiry date</p>
+                        <div class="expirydate_row">
+                           <div class="expirydate_column slds-p-top_small slds-p-bottom_small">
+                              <!-- <div class="header-column"> -->
+                              <p class="field-title" title="day">Day</p>
+                              <p>
+                                 <input type="text" id="day" name="day"  class={licDayInputCss}
+                                    style="width: 46px;" onkeyup={detailHandler3}>
+                              </p>
+                              <!-- <label for="day">Day: </label>
+                                     <input type="text" id="day" name="day" size="20"> -->
+                              <!-- </div> -->
+                           </div>
+                           <div class="expirydate_column slds-p-top_small slds-p-bottom_small">
+                              <!-- <div class="header-column"> -->
+                              <p class="field-title" title="Month">Month</p>
+                              <p>
+                                 <input type="text" id="month" name="month"  class={licDayInputCss}
+                                    style=" width: 46px;" onkeyup={detailHandler4}>
+                              </p>
+                              <!-- <label for="month">Month: </label>
+                                     <input type="text" id="month" name="month" size="20"> -->
+                              <!-- </div> -->
+                           </div>
+                           <div class="expiryyear_column slds-p-top_small slds-p-bottom_small">
+                              <!-- <div class="header-column"> -->
+                              <p class="field-title" title="Year">Year</p>
+                              <p>
+                                 <input type="text" id="year" name="year"  class={licDayInputCss}
+                                    style=" width:82px; " onkeyup={detailHandler5}>
+                              </p>
+                              <!-- <label for="Year">Year: </label>
+                                     <input type="text" id="Year" name="Year" size="20"> -->
+                              <!-- </div> -->
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- <div>
+                         <label for="day">Day: </label>
+                         <input type="text" id="day" name="day" size="20">
+                         
+                         <label for="month">Month: </label>
+                         <input type="text" id="month" name="month" size="20">
+                         
+                         <label for="Year">Year: </label>
+                         <input type="text" id="Year" name="Year" size="20">
+                         </div>
+                         <br>
+                         <br> -->
+                     <br>
+                     <br>
+                     <div>
+                        <button data-id='four' onclick={clickHandler} class="slds-button_brand govuk-button">Continue
+                           <i class="arrow2 right"></i></button>
+                     </div>
+                  </lightning-layout-item>
+               </lightning-layout>
+            </div>
+         </div>
+      </form>
+   </lightning-card>
+</template>

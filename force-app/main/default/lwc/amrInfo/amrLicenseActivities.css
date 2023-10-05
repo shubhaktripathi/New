@@ -1,0 +1,14 @@
+@import "c/style";
+lightning-card {
+    --sds-c-card-color-background: #fff;
+    --sds-c-card-color-border: #fff;
+    --sds-c-card-boxshadow: none;
+}
+
+.sub_heading {
+    line-height: 32px;
+}
+
+.stateradio_sec .slds-form-element {
+    margin-bottom: 0.3em;
+}

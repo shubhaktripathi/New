@@ -1,0 +1,18 @@
+<template>
+    <div class="error_page">
+        <div class="c-container">
+            <lightning-layout horizontal-align="center">
+               <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+        <button class="slds-button back_btn" data-id='five' value="back"  onclick={roadBlockhanlder}>
+            <i class="arrow left"></i>Back
+            </button>
+            <h3 class="main_heading">Not eligible</h3>
+            <h6 class="errorsub_head">Your licence is suspended or cancelled.</h6>
+            <p class="error_content">You cannot use Automatic Mutual Recognition while your licence is suspended or cancelled in your home State or Territory.</p>
+            <p class="error_content">When the suspension is lifted or your licence is renewed, you can come back to this form.</p>
+            <button class="error_btn" data-id="one" onclick={roadBlockhanlder}>Back to website </button>
+            </lightning-layout-item>
+            </lightning-layout>
+            </div>
+    </div>
+</template>

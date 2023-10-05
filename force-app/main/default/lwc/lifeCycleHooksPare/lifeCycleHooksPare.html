@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-11-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title={message}>
+        <p class="slds-var-p-around_small">
+            <template if:true={show}>
+                <c-life-cycle-hooks-child onincreasecount={updateMessage} message="hello"></c-life-cycle-hooks-child>
+            </template>
+            <lightning-button label="Toggle Child" onclick={toggleChild}></lightning-button>
+        </p>
+    </lightning-card>
+</template>

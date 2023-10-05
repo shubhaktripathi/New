@@ -1,0 +1,17 @@
+<template>
+    <div class="error_page">
+        <div class="c-container">
+            <lightning-layout horizontal-align="center">
+               <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+        <button class="slds-button back_btn" data-id='four' value="back"  onclick={roadBlockhanlder}>
+            <i class="arrow left"></i>Back
+            </button>
+            <h3 class="main_heading">Not yet eligible</h3>
+            <h6 class="errorsub_head">Your licence is from Queensland.</h6>
+            <p class="error_content">Queensland is not yet participating in the Automatic Mutual Recognition scheme.</p>
+            <button class="error_btn" data-id="one" onclick={roadBlockhanlder}>Back to website </button>
+            </lightning-layout-item>
+            </lightning-layout>
+            </div>
+    </div>
+</template>

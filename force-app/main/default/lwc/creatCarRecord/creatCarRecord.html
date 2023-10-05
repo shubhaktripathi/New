@@ -1,0 +1,26 @@
+<template>
+    <div class ="slds-size_1-of-2">
+    <lightning-card  title="Car Details" >
+        <lightning-layout >
+    
+            <lightning-layout-item size="12" >
+                 <b> Create New Account </b>
+                    <lightning-input name="CarName" label="Enter Car Name" onchange={handleCarDetails}></lightning-input>
+                     <lightning-input name="CarModel" label="Enter Car Model" onchange={handleCarDetails}></lightning-input>
+                     <lightning-input name="CarPrice" label=" Price Range" onchange={handleCarDetails}></lightning-input>
+  <lightning-combobox
+        name="carType"
+        label="Select Type"
+        placeholder="Choose Status"
+        value={value}
+        onchange={handleCarDetails}
+        options={dataStore}
+    >
+    </lightning-combobox>
+                     <lightning-button  label="Book Car" onclick={handleCarClick}></lightning-button>    
+            </lightning-layout-item>
+            
+</lightning-layout>
+    </lightning-card>  
+</div>
+</template>

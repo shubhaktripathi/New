@@ -1,0 +1,232 @@
+<template>
+   <progress value="8" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+
+                     <button data-id="eight" onclick={backHandler} class="slds-button back_btn"><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={locErr} class="validation_box">
+                      <h4 class="val_heading">There is a problem</h4>
+                        <p class="error_text"> Select yes if you are licenced to carry out these activites outside your
+                           home State or Territory</p>
+                     </div>
+                     <div if:true={locErr1} class="validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                        <ul>
+                           <p class="error_text">Select the States or Territories</p>
+                        </ul>
+
+                     </div>
+                     <div>
+                        <h3 class="step_heading"><strong>Step 8 of 11</strong></h3>
+                     </div>
+                     <h1 class="main_heading slds-var-p-top-x-small">Licensed activities outside your home state</h1>
+                     <div>
+                        <lightning-layout horizontal-align="left">
+                           <lightning-layout-item size="12" small-device-size="12" medium-device-size="9" large-device-size="9" >
+                        <!--h1>AMR Activity elsewhere</h1-->
+                        <p class="discp_text slds-var-p-bottom_large">We need to know where else you can carry out the activites under your licence,because the ACT is required to tell other States or Territories about any restrictions we apply to you here.</p>
+                           </lightning-layout-item>
+                           </lightning-layout>
+
+                     </div>
+                     <div class={locErrCss}>
+                        <!-- <div class={locErr1Css}> -->
+                           <lightning-layout horizontal-align="left">
+                              <lightning-layout-item size="12" small-device-size="12" medium-device-size="9" large-device-size="9" >
+                           <h1 class="sub_heading">Are you licensed to carry out these activities outside of your home State or Territory?</h1>
+                                 </lightning-layout-item>
+                                 </lightning-layout>
+                           <br>
+                           <!-- <div> -->
+                              <div class="radio_sec stateradio_sec">
+                                 <p if:true={locErr} class="error error_label slds-var-p-bottom_medium"> Select yes if
+                                    you are licenced to carry out these activties outside your home State or Territory
+                                 </p>
+                                 <p if:true={locErr1} class="error error_label slds-var-p-bottom_medium">Select States
+                                    or Territories </p>
+                                 <!--input type="radio" id="1" name="Choice" value="yes" onclick={clickHandler1}>
+                                 <label for="yes">Yes</label-->
+                                    <fieldset class="slds-form-element">
+                                       <div class="slds-form-element__control radio_sec" onclick={clickHandler1}>
+                                         <span class="slds-radio">
+                                           <input type="radio" id="1" value="yes" name="Choice" />
+                                           <label class="slds-radio__label" for="1">
+                                             <span class="slds-radio_faux"></span>
+                                             <span class="slds-form-element__label">Yes</span>
+                                           </label>
+                                         </span>
+                                       </div>
+                                     </fieldset>
+                              </div>
+                             
+                              <template if:true={display}>
+                                 <div class="vl licence_territory_radio slds-var-m-bottom_large check_places">
+                                    <fieldset>
+                                       <legend style="color:#000;">Where?</legend>
+                                       <br>
+                                       <div>
+                                          <!-- <input type="checkbox" id="nsw" name="nsw" value="New South Wales"
+                                             onchange={locHandler}>
+                                          <label for="nsw">New South Wales</label> -->
+                                          <div class="slds-form-element">
+                                             <div class="slds-form-element__control">
+                                               <div class="slds-checkbox">
+                                                 <input type="checkbox" name="nsw" id="nsw" value="New South Wales" onchange={locHandler} />
+                                                 <label class="slds-checkbox__label" for="nsw">
+                                                   <span class="slds-checkbox_faux"></span>
+                                                   <span class="slds-form-element__label">New South Wales</span>
+                                                 </label>
+                                               </div>
+                                             </div>
+                                           </div>
+                                          
+                                       </div>
+                                       <br>
+                                       <div>
+                                          <!-- <input type="checkbox" id="vic" name="vic" value="Victoria"
+                                             onchange={locHandler}>
+                                          <label for="vic">Victoria</label> -->
+                                          <div class="slds-form-element">
+                                             <div class="slds-form-element__control">
+                                               <div class="slds-checkbox">
+                                                 <input type="checkbox" name="vic" id="vic" value="Victoria" onchange={locHandler} />
+                                                 <label class="slds-checkbox__label" for="vic">
+                                                   <span class="slds-checkbox_faux"></span>
+                                                   <span class="slds-form-element__label">Victoria</span>
+                                                 </label>
+                                               </div>
+                                             </div>
+                                           </div>
+                                          
+                                       </div>
+                                       <br>
+                                       <div>
+                                          <!-- <input type="checkbox" id="qu" name="qu" value="Queensland"
+                                             onchange={locHandler}>
+                                          <label for="sa">Queensland</label> -->
+                                          <div class="slds-form-element">
+                                             <div class="slds-form-element__control">
+                                               <div class="slds-checkbox">
+                                                 <input type="checkbox" name="qu" id="qu" value="Queensland" onchange={locHandler} />
+                                                 <label class="slds-checkbox__label" for="qu">
+                                                   <span class="slds-checkbox_faux"></span>
+                                                   <span class="slds-form-element__label">Queensland</span>
+                                                 </label>
+                                               </div>
+                                             </div>
+                                           </div>
+
+
+                                       </div>
+                                       <br>
+                                       <div>
+                                          <!-- <input type="checkbox" id="sa" name="sa" value="South Australia"
+                                             onchange={locHandler}>
+                                          <label for="tas">South Australia</label> -->
+                                          <div class="slds-form-element">
+                                             <div class="slds-form-element__control">
+                                               <div class="slds-checkbox">
+                                                 <input type="checkbox" name="sa" id="sa" value="South Australia" onchange={locHandler} />
+                                                 <label class="slds-checkbox__label" for="sa">
+                                                   <span class="slds-checkbox_faux"></span>
+                                                   <span class="slds-form-element__label">South Australia</span>
+                                                 </label>
+                                               </div>
+                                             </div>
+                                           </div>
+                                       </div>
+                                       <br>
+                                       <div>
+                                          <!-- <input type="checkbox" id="ta" name="ta" value="Tasmania"
+                                             onchange={locHandler}>
+                                          <label for="nt">Tasmania</label> -->
+                                          <div class="slds-form-element">
+                                             <div class="slds-form-element__control">
+                                               <div class="slds-checkbox">
+                                                 <input type="checkbox" name="ta" id="ta" value="Tasmania" onchange={locHandler} />
+                                                 <label class="slds-checkbox__label" for="ta">
+                                                   <span class="slds-checkbox_faux"></span>
+                                                   <span class="slds-form-element__label">Tasmania</span>
+                                                 </label>
+                                               </div>
+                                             </div>
+                                           </div>
+
+
+                                       </div>
+                                       <br>
+                                       <div>
+                                          <!-- <input type="checkbox" id="nt" name="nt" value="Northern Territory"
+                                             onchange={locHandler}>
+                                          <label for="wa">Northern Territory</label> -->
+                                          <div class="slds-form-element">
+                                             <div class="slds-form-element__control">
+                                               <div class="slds-checkbox">
+                                                 <input type="checkbox" name="nt" id="nt" value="Northern Territory" onchange={locHandler} />
+                                                 <label class="slds-checkbox__label" for="nt">
+                                                   <span class="slds-checkbox_faux"></span>
+                                                   <span class="slds-form-element__label">Northern Territory</span>
+                                                 </label>
+                                               </div>
+                                             </div>
+                                           </div>
+
+
+
+
+                                       </div>
+                                       <br>
+                                       <div>
+                                          <!-- <input type="checkbox" id="wa" name="wa" value="Western Australia"
+                                             onchange={locHandler}>
+                                          <label for="wa">Western Australia</label> -->
+                                          <div class="slds-form-element">
+                                             <div class="slds-form-element__control">
+                                               <div class="slds-checkbox">
+                                                 <input type="checkbox" name="wa" id="wa" value="Western Australia" onchange={locHandler} />
+                                                 <label class="slds-checkbox__label" for="wa">
+                                                   <span class="slds-checkbox_faux"></span>
+                                                   <span class="slds-form-element__label">Western Australia</span>
+                                                 </label>
+                                               </div>
+                                             </div>
+                                           </div>
+                                       </div>
+                                    </fieldset>
+                                 </div>
+                              </template>
+
+<!--div class="radio_sec licence_territory_radio">
+    <input type="radio" id="louie" name="Choice" value="no" onclick={clickHandler2}>
+    <label for="no">No</label>
+</div-->
+<fieldset class="slds-form-element">
+    <div class="slds-form-element__control radio_sec" onclick={clickHandler2}>
+        <span class="slds-radio">
+                                 <input type="radio" id="2" value="no" name="Choice" />
+                                 <label class="slds-radio__label" for="2">
+                                    <span class="slds-radio_faux"></span>
+        <span class="slds-form-element__label">No</span>
+        </label>
+        </span>
+    </div>
+</fieldset>
+<!-- </div> -->
+<!-- </div> -->
+</div>
+<br>
+<button data-id="ten" onclick={clickHandler} class="govuk-button slds-button_brand slds-m-top_medium">Continue <i
+                                 class="arrow2 right"></i></button>
+</lightning-layout-item>
+</lightning-layout>
+</div>
+</div>
+</form>
+</lightning-card>
+</template>

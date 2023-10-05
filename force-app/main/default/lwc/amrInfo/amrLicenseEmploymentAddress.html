@@ -1,0 +1,169 @@
+<template>
+   <progress value="10" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+
+                     <button data-id="ten" onclick={backHandler} class="slds-button back_btn"><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={empErr} class="validation_box">
+                        <h4 class="val_heading"> There is a problem</h4>
+                        <p class="error_text">Select yes if you are employed in your licenced occupation</p>
+
+                     </div>
+                     <div if:true={empErr1} class="validation_box">
+                        <h4 class="val_heading">There is a Problem</h4>
+                        <p class="error_text">Enter an address</p>
+                        <p class="error_text">Enter an suburb</p>
+                        <p class="error_text">Enter an postcode</p>
+                        <p class="error_text">Choose a State or Territory</p>
+                     </div>
+                     <div>
+                        <h3 class="step_heading"><strong>Step 10 of 11</strong></h3>
+                     </div>
+                     <h1 class="main_heading slds-var-p-top-x-small">Employment address</h1>
+                     <div>
+                        <!--h1>AMR Activity elsewhere</h1-->
+                        <p class="discp_text slds-var-p-bottom_medium">To determine your eligibility, we need to know
+                           where you are
+                           employed.
+                        </p>
+                        <p class="discp_text">Either your home address or your employment address must be in the
+                           same State or Territory as your licence is issued.
+                        </p>
+                        <br>
+                        <div class={empErrCss}>
+
+                           <h1 class="sub_heading slds-var-p-top-x-small slds-var-p-bottom_small"><strong>Are you
+                                 employed in your licenced occupation?</strong>
+                           </h1>
+                           <p if:true={empErr} class="error"> Select yes if you are employed in your licenced occupation
+                           </p>
+                           <br>
+
+                           <!--div class="radio_sec licence_territory_radio">
+                              <input type="radio" id="6" name="Choice1" value="no1" onclick={clickHandler3}>
+                              <label for="no1">No</label>
+                           </div>
+
+                           <br>
+                           <div class="radio_sec licence_territory_radio" style="display: flex;">
+                              <input type="radio" class="yes_radio" id="7" name="Choice1" value="yes1"
+                                 onclick={clickHandler4}>
+                              <label for="yes1">Yes, I am employed in my licenced occupation</label>
+                           </div-->
+                           <fieldset class="slds-form-element">
+                              <div class="slds-form-element__control radio_sec">
+                                <span class="slds-radio">
+                                  <input type="radio" id="6" value="no1" name="Choice1" onclick={clickHandler3} />
+                                  <label class="slds-radio__label emplicen_sec" for="6">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">No</span>
+                                  </label>
+                                </span>
+
+                                <span class="slds-radio">
+                                   <!-- <div> -->
+                                  <input type="radio" id="7" value="yes1" name="Choice1" onclick={clickHandler4}/>
+                                    <!-- </div> -->
+                                    <!-- <div> -->
+                                    <label class="slds-radio__label emplicen_sec" for="7">
+                                       <span class="slds-radio_faux"></span>
+                                       <span class="slds-form-element__label">Yes, I am employed in my licenced occupation</span>
+                                    </label>
+                                    <!-- </div> -->
+                                 </span>
+                              </div>
+                            </fieldset>
+                        </div>
+                      
+                        <template if:true={takeAddress}>
+                           <h2 class="sub_heading">What is your employment address?</h2>
+                           <br>
+                           <button class={empErrHelpClass} onclick={employmentHandler}>
+                              <template if:true={icon3}>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z">
+                                    </path>
+                                 </svg>
+                              </template>
+<template if:false={icon3}>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
+                                    </path>
+                                 </svg>
+                              </template>
+<p class={empErrHelpClass1}>Help for travelling or self employed workers </p>
+</button>
+<br>
+<template if:true={employment}>
+                              <div class="vl">
+                                 <p class="slds-var-p-top-x-medium" style="color:#000;">If your occupation takes you between job
+                                    sites or you are self-employed,your employment address is your company's main office.
+                                 </p>
+                              </div>
+                           </template>
+<br>
+<div class={empErr1Css}>
+    <label for="sadd">Street address</label> <br>
+    <p if:true={empErr1} class="error error_label slds-var-p-bottom_medium"> Select street address
+    </p>
+    <input type="text" id="sadd" name="sadd" required class={empErr1InpCss} onkeyup={streetAddressHandler}>
+</div>
+<br>
+<div class={empErr1Css}>
+    <label for="sub">Suburb</label><br>
+    <p if:true={empErr1} class="error error_label slds-var-p-bottom_medium"> Enter a suburb
+    </p>
+    <input type="text" id="sub" name="sub" required class={empErr1InpCss} onkeyup={suburbHandler}>
+</div>
+<br>
+<div class={empErr1Css}>
+
+    <label for="pc">Postcode</label><br>
+    <p if:true={empErr1} class="error error_label slds-var-p-bottom_medium"> Enter a postcode
+    </p>
+
+    <input type="text" id="pc" name="pc" required class={empErr1InpCss} style="width:181px;" onkeyup={postcodeHandler}>
+</div>
+<br>
+<div class={empErr1Css}>
+
+    <label for="city">State or Territory</label><br>
+    <p if:true={empErr1} class="error error_label slds-var-p-bottom_medium"> Choose a State or Territory
+    </p>
+    <div class="state_select_sec">
+        <select name="city" id="city" class={empErr1InpCss} onchange={territoryHandler}>
+                                 <option value=""></option>
+                                 <option value="nsw">New South Wales</option>
+                                 <option value="vic">Victoria</option>
+                                 <option value="qn">Queensland</option>
+                                 <option value="sa">South Australia</option>
+                                 <option value="tas">Tasmania</option>
+                                 <option value="nt">Northern Territory</option>
+                                 <option value="wa">Western Australia</option>
+                              </select>
+    </div>
+</div>
+<br>
+</template>
+</div>
+
+
+<button data-id="twelve" onclick={clickHandler} class="govuk-button slds-button_brand">Continue
+                        <i class="arrow2 right"></i></button>
+</lightning-layout-item>
+</lightning-layout>
+</div>
+</div>
+</form>
+</lightning-card>
+</template>

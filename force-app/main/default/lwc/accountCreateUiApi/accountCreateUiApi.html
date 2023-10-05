@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-29-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="AccountCreateUiApi" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Name" onchange={handleChange} class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input label="AnnualRevenue" onchange={handleChange} class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-button label="Create Account" variant="success" onclick={createAccount}></lightning-button>
+        </div>
+    </lightning-card>   
+</template>

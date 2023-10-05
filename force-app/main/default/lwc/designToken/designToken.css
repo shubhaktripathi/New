@@ -1,0 +1,13 @@
+.token {
+     
+        background-color: var(--lwc-brandAccessibleActive);
+        margin-right: var(--lwc-spacingSmall);
+        font-size: 50px;
+}
+
+.hook{
+        --slds-c-badge-color-background:pink;
+        --slds-c-badge-radius-border:10rem
+
+
+}

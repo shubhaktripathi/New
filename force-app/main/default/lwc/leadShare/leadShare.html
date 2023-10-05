@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-25-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <template if:true={userList}>
+        <lightning-datatable key-field="id" onrowaction={handleRowAction} data={userList}
+            columns={columns}></lightning-datatable>
+    </template>
+
+    <template if:true={userPermission}>
+        <div class="slds-m-around_small">
+            <lightning-card icon-name="standard:account" variant="base" title="Your Permission On Record">
+                <div> Permission of this Lead for User: {userName} is
+                    <div><b> Read Access</b>==> {userPermission.HasReadAccess}</div>
+                    <div><b> Edit Access</b>==> {userPermission.HasEditAccess} </div>
+                </div>
+            </lightning-card>
+        </div>
+    </template>
+
+</template>

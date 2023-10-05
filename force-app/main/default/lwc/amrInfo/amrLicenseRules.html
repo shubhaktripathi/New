@@ -1,0 +1,79 @@
+<template>
+   <progress value="5" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+
+                     <button data-id='five' onclick={backHandler} class="slds-button back_btn"><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={rulesErr} class="error validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                        <ul>
+                           <p class="error_text"> Select yes if you meet the additional rules in your occupation</p>
+                        </ul>
+                     </div>
+                     <div>
+                        <h3 class="step_heading"><strong>Step 5 of 11</strong></h3>
+
+                     </div>
+                     <h1 class="main_heading slds-var-p-top-x-small">Additional rules in the ACT</h1>
+                     <div class="slds-text-longform additionalact_sec">
+                        <p>
+                           The ACT may have additional rules for your occupation, beyond your home State or Territory
+                           rules.
+                        </p>
+
+                        <p>You will need to look into which ACT licence rules apply to you.</p>
+                        <p><a><u>Learn more about ACT licence Rules</u></a> </p>
+                        <br>
+                        <!-- <li>You need a <a>Working With Vulnerable Peoples check</a></li> -->
+                        <div class={rulesErrCss}>
+
+                           <h3 class="sub_heading  slds-var-p-bottom_medium"><strong>Do you meet our additional rules
+                                 for your occupation?</strong></h3>
+
+                           <p if:true={rulesErr} class="error_label  slds-var-p-bottom_medium"> Select yes if you meet
+                              the requirements listed above</p>
+                           <!--div onchange={rulesHandler} class="licence_territory_radio">
+                              <input type="radio" id="first" name="rules" value="Yes" style="margin-bottom: 0.7em;">
+                              <label for="first">Yes</label>
+                              <br><br>
+                              <input type="radio" id="second" name="rules" value="no" style="margin-bottom: 0.7em;">
+                              <label for="second">No</label>
+                           </div-->
+                           <fieldset class="slds-form-element">
+                              <div class="slds-form-element__control radio_sec" onchange={rulesHandler}>
+                                <span class="slds-radio">
+                                  <input type="radio" id="first" value="Yes" name="rules" />
+                                  <label class="slds-radio__label" for="first">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">Yes</span>
+                                  </label>
+                                </span>
+
+                                <span class="slds-radio">
+                                  <input type="radio" id="second" value="no" name="rules" />
+                                  <label class="slds-radio__label" for="second">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">No</span>
+                                  </label>
+                                </span>
+                              </div>
+                            </fieldset>
+                        </div>
+                         
+                           <button data-id="seven" class="govuk-button slds-button_brand"
+                              onclick={clickHandler}>Continue <i class="arrow2 right"></i></button>
+                        </div>
+                    
+                  </lightning-layout-item>
+               </lightning-layout>
+            </div>
+         </div>
+      </form>
+   </lightning-card>
+</template>

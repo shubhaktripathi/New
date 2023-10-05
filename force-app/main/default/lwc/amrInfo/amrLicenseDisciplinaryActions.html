@@ -1,0 +1,147 @@
+<template>
+   <progress value="6" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+
+                     <button data-id='six' class="slds-button back_btn" onclick={backHandler}><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={d1Err} class="error validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                        <p class="error_text"> Select yes if you are subject to disciplinary action</p>
+                        <p class="error_text">Select yes if you have been refused registration</p>
+                        <p class="error_text"> Select yes if you are subject to criminal, civil or disciplinary
+                           proceedings</p>
+                     </div>
+                     <div>
+                        <h3 class="step_heading"><strong>Step 6 of 11</strong></h3>
+                     </div>
+                     <h1 class="main_heading slds-var-p-top-x-small">Disciplinary actions or refused registrations</h1>
+                     <div class={d1ErrCss}>
+
+                        <p class="discp_text">Are you subject to any disciplinary action in any State or Territory as it
+                           relates to this occupation?</p>
+                        <br>
+                        <p if:true={d1Err} class="error error_label slds-var-p-bottom_medium"> Select the States or
+                           Territories where you have used AMR for this licence </p>
+                        <!--div onchange={actionsHandler1} class="licence_territory_radio">
+                           <input type="radio" id="1" name="license1" value="Yes">
+                           <label for="1">Yes</label>
+                           <br><br>
+                           <input type="radio" id="2" name="license1" value="No">
+                           <label for="2">No</label>
+                           <br>
+                        </div-->
+                        <fieldset class="slds-form-element">
+                           <div class="slds-form-element__control radio_sec" onchange={actionsHandler1}>
+                             <span class="slds-radio">
+                               <input type="radio" id="1" value="Yes" name="license1" />
+                               <label class="slds-radio__label" for="1">
+                                 <span class="slds-radio_faux"></span>
+                                 <span class="slds-form-element__label">Yes</span>
+                               </label>
+                             </span>
+                             <span class="slds-radio">
+                               <input type="radio" id="2" value="No" name="license1" />
+                               <label class="slds-radio__label" for="2">
+                                 <span class="slds-radio_faux"></span>
+                                 <span class="slds-form-element__label">No</span>
+                               </label>
+                             </span>
+                           </div>
+                         </fieldset>
+                     </div>
+                     <br>
+
+                     <div class={d1ErrCss}>
+                        <p class="discp_text">Have you been refused registration in any State or Territory for an
+                           occupation that covers the activity?</p>
+                        <br>
+                        <p if:true={d1Err} class="error error_label slds-var-p-bottom_medium"> Select yes if you have
+                           been refused registration
+                        </p>
+
+
+                        <!--div onchange={actionsHandler2} class="licence_territory_radio">
+                           <input type="radio" id="3" name="license2" value="Yes">
+                           <label for="1">Yes</label>
+                           <br><br>
+                           <input type="radio" id="4" name="license2" value="No">
+                           <label for="2">No</label>
+                           <br>
+                        </div-->
+                        <fieldset class="slds-form-element">
+                           <div class="slds-form-element__control radio_sec" onchange={actionsHandler2}>
+                             <span class="slds-radio">
+                               <input type="radio" id="3" value="Yes" name="license2" />
+                               <label class="slds-radio__label" for="3">
+                                 <span class="slds-radio_faux"></span>
+                                 <span class="slds-form-element__label">Yes</span>
+                               </label>
+                             </span>
+
+                             <span class="slds-radio">
+                               <input type="radio" id="4" value="No" name="license2" />
+                               <label class="slds-radio__label" for="4">
+                                 <span class="slds-radio_faux"></span>
+                                 <span class="slds-form-element__label">No</span>
+                               </label>
+                             </span>
+                           </div>
+                         </fieldset>
+                     </div>
+                     <br>
+
+                     <div class={d1ErrCss}>
+
+
+                        <p class="discp_text">Are you personally subject to criminal, civil or disciplinary proceedings,
+                           including any preliminary investigations or action that might lead to disciplinary
+                           proceedings?</p>
+                        <br>
+                        <p if:true={d1Err} class="error error_label slds-var-p-bottom_medium"> Select yes if you are
+                           subject to criminal, civil or disciplinary proceedings </p>
+                        <!--div onchange={actionsHandler3} class="licence_territory_radio">
+                           <input type="radio" id="5" name="license3" value="Yes">
+                           <label for="1">Yes</label>
+                           <br><br>
+                           <input type="radio" id="6" name="license3" value="No">
+                           <label for="2">No</label>
+                           <br>
+                           <br>
+                        </div-->
+                        <fieldset class="slds-form-element">
+                           <div class="slds-form-element__control radio_sec" onchange={actionsHandler3}>
+                             <span class="slds-radio">
+                               <input type="radio" id="5" value="Yes" name="license3" />
+                               <label class="slds-radio__label" for="5">
+                                 <span class="slds-radio_faux"></span>
+                                 <span class="slds-form-element__label">Yes</span>
+                               </label>
+                             </span>
+
+                             <span class="slds-radio">
+                               <input type="radio" id="6" value="No" name="license3" />
+                               <label class="slds-radio__label" for="6">
+                                 <span class="slds-radio_faux"></span>
+                                 <span class="slds-form-element__label">No</span>
+                               </label>
+                             </span>
+                           </div>
+                         </fieldset>
+                     </div>
+                     <div><br>
+                        <button data-id="eight" class="govuk-button slds-button_brand" onclick={clickHandler}>Continue
+                           <i class="arrow2 right"></i></button>
+                     </div>
+                  </lightning-layout-item>
+               </lightning-layout>
+            </div>
+         </div>
+      </form>
+   </lightning-card>
+</template>

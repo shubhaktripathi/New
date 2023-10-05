@@ -1,0 +1,9 @@
+@import "c/style";
+:host {
+    --sds-c-card-color-background: #F0F3F5;
+    --sds-c-card-color-border: #F0F3F5;
+}
+
+.declaration_subheading .sub_heading {
+    margin-bottom: 8px;
+}

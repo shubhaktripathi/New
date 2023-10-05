@@ -1,0 +1,20 @@
+<template>
+    <div class=" slds-size_1-of-2 ">
+    <lightning-card  title="Account Details" >
+        <lightning-layout >
+    
+            <lightning-layout-item size="12" >
+                 <b> Create New Account </b>
+                    <lightning-input name="AccountName" label="Enter Account Name" onchange={handleAccountDetails}></lightning-input>
+                     <lightning-input name="AccountPhone" label="Enter Account Phone" onchange={handleAccountDetails}></lightning-input>
+                     <lightning-button class="ABC" label="Create Account" onclick={handleAccountClick}></lightning-button>
+    
+        
+    
+                
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    </div>
+    </template>
+    <!--in this code css not work-->

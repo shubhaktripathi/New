@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="iteratorLooping" icon-name="custom:custom5">
+        <div class="slps-p-around_medium slds-m-left_large">
+            <template iterator:it={carWebs}>
+                <div key={it.value.link}>
+                    <p if:true={it.first} class="p list-group-item list-group-item-header">List Of Popular Cars</p>
+                    <strong><a href="#">{it.value.name} </a></strong>
+                    <p if:true={it.last} class="p">@shubhamtripathi</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

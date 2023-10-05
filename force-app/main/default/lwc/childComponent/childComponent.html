@@ -1,0 +1,12 @@
+<template>
+    <strong>
+        Value passed from parent is {name} {lastName}
+    </strong>
+    <template for:each={userDetails} for:item="us">
+        <div key={us.id}>
+            {us.name} --> {us.id}</div>
+    </template>
+<lightning-progress-bar value={percentage} class="per" size="large"></lightning-progress-bar>
+
+
+</template>

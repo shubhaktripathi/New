@@ -1,0 +1,71 @@
+<template>
+    <lightning-card title = "AMR Activity Elsewhere">
+    <div class="slds-var-m-around_medium">
+    <div>
+        <!--h1>AMR Activity elsewhere</h1-->
+
+        <p>We need to know if you have used this license through Automatic Mutual Recognition in another State or Territory</p>
+
+        <p>You will have filled out a form similar to this one each time you have used AMR elsewhere, for each State or Territory government.</p>
+
+        <p>Some States or Territories may refer to AMR as Jobpass. They are the same scheme.</p>
+    </div>
+
+    <form>
+        <h1>Have you used AMR in another State or Territory for this licence?</h1>
+
+        <div>
+            <input type="radio" id="1" name="Choice" value="yes" onclick = {clickHandler}>
+            <label for="yes">Yes, I have used AMR for this licence</label>
+        </div>
+      
+    <template if:true={display}>
+        <fieldset>
+            <legend>Where?</legend>
+        
+            <div>
+              <input type="checkbox" id="nsw" name="nsw">
+              <label for="nsw">New South Wales</label>
+            </div>
+        
+            <div>
+              <input type="checkbox" id="vic" name="vic">
+              <label for="vic">Victoria</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="sa" name="sa">
+                <label for="sa">South Australia</label>
+            </div>
+          
+            <div>
+                <input type="checkbox" id="tas" name="tas">
+                <label for="tas">Tasmania</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="nt" name="nt">
+                <label for="nt">Northern Territory</label>
+            </div>
+          
+            <div>
+                <input type="checkbox" id="wa" name="wa">
+                <label for="wa">Western Australia</label>
+            </div>
+        </fieldset>
+    </template>
+  
+    <div>
+        <input type="radio" id="louie" name="Choice" value="no" onclick = {clickHandler1}>
+        <label for="no">No</label>
+    </div>
+
+    <button>Continue</button>
+    </form>
+    <button onclick={next7}>Next</button>
+    <button onclick={back7}>Back</button>
+    </div>
+
+</lightning-card>
+    
+</template>

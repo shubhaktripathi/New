@@ -1,0 +1,198 @@
+<template>
+    <div class="steps">
+        <progress value="1" max="12" class="progress_bar"></progress>
+        <lightning-card>
+            <div class="slds-p-around_medium main_sec">
+                <div class="c-container">
+
+                    <!-- <div class="ProgressStatus">
+              <div class="myprogressBar"></div>
+              </div> -->
+                    <!-- <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="1"  role="progressbar">
+              <span class="slds-progress-bar__value" style="width:1/12">
+                <span class="slds-assistive-text">Progress: 1/12</span>
+              </span>
+              </div> -->
+                    <!-- <label for="file">Downloading progress:</label> -->
+                    <lightning-layout horizontal-align="center">
+                        <!-- <template if:true={occErr}>
+                           <lightning-layout-item class="error slds_p_around_small" size="12" small-device-size="10"
+                               medium-device-size="8" large-device-size="6">
+                               <div>
+                                   You can not go ahead!!!!!
+                               </div>
+                           </lightning-layout-item>
+                       </template> -->
+
+
+<lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10">
+
+    <form>
+        <button class="slds-button back_btn" data-id='one' value="back" onclick={backHandler}>
+                                    <i class="arrow left"></i>Back
+                                </button>
+        <div if:true={errArr} class="validation_box">
+            <h4 class="val_heading">There is a problem</h4>
+            <div>
+                <ul class="error"> <strong>
+                                                <p class="error_text">Select the relevant occupation</p>
+                                            </strong> </ul>
+                <ul class="error">
+                    <strong>
+                                                <p class="error_text">Select if the licence is held by a company or by
+                                                    an individual person</p>
+                                            </strong>
+                </ul>
+            </div>
+
+        </div>
+        <div>
+            <h3 class="step_heading"><strong>Step 1 of 11</strong></h3>
+        </div>
+        <h1 class="slds-var-p-top_x-small main_heading ">Occupation you can do with your licence
+        </h1>
+        <div class={occErrCss}>
+            <h3 class="slds-p-bottom_small occ_sub_heading deskocc_head">What occupation does your licence let you do?
+            </h3>
+            <h3 if:false={occErr} class="slds-p-bottom_small choose_head">Choose the closest option
+            </h3>
+            <h1 if:true={occErr} class="error_label slds-p-bottom_small"> Select the relevant occupation
+            </h1>
+
+            <!-- <label class="slds-form-element__label" for="select-01">Occupation</label> -->
+
+
+            <div class="slds-form-element__control slds-p-bottom_large occ_select_sec">
+                <select class={textInputErr} id="select-01" onchange={occupationHandler}>
+                                            <option class="col" value=""></option>
+                                            <option class="col" value="Driving Instructor">Driving Instructor</option>
+                                            <option class="col" value="Security Guard">Security Guard</option>
+                                            <option class="col" value="Real Estate Sales Manager">Real Estate Sales
+                                                Manager
+                                            </option>
+                                            <option class="col" value="Property Manager">Property Manager</option>
+                                            <option class="col" value="Mechanic">Mechanic</option>
+                                        </select>
+            </div>
+        </div>
+
+        <!-- 
+                                 <div if:true={occErr}  >
+                                  <div class="slds-form-element__control">
+                                        <div >
+                                            <select class="slds-p-bottom_small occupation_select"  id="select-01"
+                                                onchange={occupationHandler} style="border-color:red;">
+                                                <option  class="col" value="">Select…</option>
+                                                <option class="col" value="Driving Instructor">Driving Instructor</option>
+                                                <option class="col" value="Security Guard">Security Guard</option>
+                                                <option class="col" value="Real Estate Sales Manager">Real Estate Sales Manager
+                                                </option>
+                                                <option class="col" value="Property Manager">Property Manager</option>
+                                                <option class="col" value="Mechanic">Mechanic</option>
+                                            </select>
+                                            <br><br>
+                                        </div>
+                                    </div>
+                               </div> 
+                                 <div if:false={occErr}  >
+                                <div class="slds-form-element__control">
+                                      <div >
+                                          <select class="slds-p-bottom_small occupation_select"  id="select-02"
+                                              onchange={occupationHandler}>
+                                              <option  class="col" value="">Select…</option>
+                                              <option class="col" value="Driving Instructor">Driving Instructor</option>
+                                              <option class="col" value="Security Guard">Security Guard</option>
+                                              <option class="col" value="Real Estate Sales Manager">Real Estate Sales Manager
+                                              </option>
+                                              <option class="col" value="Property Manager">Property Manager</option>
+                                              <option class="col" value="Mechanic">Mechanic</option>
+                                          </select>
+                                          <br><br>
+                                      </div>
+                                  </div>
+                             </div> -->
+
+
+        <!-- <label class="slds-form-element__label" for="textarea-id-01">Type</label>
+                       <div class="slds-form-element__control">
+                         <textarea id="textarea-id-01" placeholder="Enter Here…" class="slds-textarea"></textarea>
+                           </div> -->
+        <button class={helpClass} onclick={showHelp}>                                    <template if:true={icon}> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-caret-down-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z">
+                                            </path>
+                                        </svg>
+
+                                    </template>
+                                    <template if:false={icon}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
+                                            </path>
+                                        </svg>
+                                    </template>
+                                    <p class={helpclass1}>Help if you're unsure</p>
+
+                                </button>
+
+        <template if:true={help}>
+                                    <div class="vl">
+                                        <p class="slds-var-p-top_medium help_text">If your occupation
+                                            isn't listed above or you're unsure if you're eligible:</p>
+                                        <ul class="slds-list_dotted step1_list occ_list">
+                                            <li>
+                                                <a><u>Check this page to see what's eligible for AMR</u>
+                                                </a>
+                                            </li>
+                                            <li>Call us at 13 22 81</li>
+                                        </ul>
+                                    </div>
+                                </template>
+        <br>
+        <div class={occErrCss}>
+            <h3 class="slds-text-heading_medium slds-var-p-top_small slds-p-bottom_medium occ_sub_heading">
+                Is this licence held by a company or an individual person? </h3>
+            <h1 if:true={licErr} class="error_label slds-p-bottom_medium"> Select if the licence is held by a company or by an individual person
+            </h1>
+
+            <!--div class="individual_radio radio_sec">
+                                        <input class="govuk-radios__input" type="radio" id="1" name="Choice"
+                                            value="An individual person" onchange={typef}>
+                                        <label for="yes"> An individual person </label><br><br>
+                                        <input class="govuk-radios__input govuk-radios__input1" type="radio" id="2"
+                                            name="Choice" value="A company" onchange={typef}>
+                                        <label for="yes"> A company</label>
+                                    </div-->
+            <fieldset class="slds-form-element">
+                <div class="slds-form-element__control radio_sec">
+                    <span class="slds-radio">
+                                            <input type="radio" id="1" value="An individual person" name="Choice" onchange={typef}/>
+                                            <label class="slds-radio__label" for="1">
+                                              <span class="slds-radio_faux"></span>
+                    <span class="slds-form-element__label">An individual person</span>
+                    </label>
+                    </span>
+                    <span class="slds-radio">
+                                            <input type="radio" id="2" value="A company" name="Choice" onchange={typef} />
+                                            <label class="slds-radio__label" for="2">
+                                              <span class="slds-radio_faux"></span>
+                    <span class="slds-form-element__label">A company</span>
+                    </label>
+                    </span>
+                </div>
+            </fieldset>
+        </div>
+
+        <button class="slds-button_brand govuk-button" data-id="three" value="next" onclick={clickHandler}>Continue <i class="arrow2 right"></i></button>
+        <!-- Continue<i class="arrow right"></i> -->
+    </form>
+</lightning-layout-item>
+</lightning-layout>
+</div>
+</div>
+</lightning-card>
+</div>
+</template>

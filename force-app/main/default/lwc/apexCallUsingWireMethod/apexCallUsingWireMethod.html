@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="ApexCallUsingWireMethod" icon-name="standard:account">
+        <template for:each={wiredContact.data} for:item="Acc">
+            <div key={Acc.Id}> {Acc.Name}</div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="ApexCallUsingWireMethod" icon-name="standard:account">
+        <lightning-input type="text" variant="standard" name="name" label="Enter the Name" placeholder="type here..." onchange={handleClick} value={searchKey}></lightning-input>
+       <template if:true={Accounts}>
+        <template for:each={Accounts} for:item="AccL">
+            <p key={AccL.Id}> {AccL.Name}</p>
+        </template>
+       </template>
+    </lightning-card>
+</template>

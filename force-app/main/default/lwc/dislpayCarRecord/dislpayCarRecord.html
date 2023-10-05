@@ -1,0 +1,33 @@
+<template>      
+    <lightning-card title="Accounts" icon-name="custom:custom63">  
+        <b>THIS IS SECOND COMPONENT</b> 
+        <div class="slds-m-around_medium">  
+            <div class=" slds-grid slds-wrap  ">
+             <div class=" slds-size_1-of-3 ">
+            <lightning-input  type="search" label="Search Account" onchange={handleSearch}></lightning-input><br/><br/>
+            </div>
+            <div class=" slds-size_1-of-3 ">
+            <lightning-input required="true" value="" name="startdate" type="date" label="Start Date" onchange={handledate}></lightning-input><br/><br/>
+        </div>
+         <div class=" slds-size_1-of-3 ">
+        <lightning-input  name="EndDate" type="date" label="EndDate" onchange={handledate}></lightning-input><br/><br/>
+        </div>
+        </div>
+            <template if:true={availableAccounts}>      
+                <lightning-datatable
+                 
+                    key-field="Id"
+                    data={availableAccounts}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    show-row-number-column="true"
+                    onrowaction={butttonClick}
+                    >
+                </lightning-datatable>  
+            </template>      
+            <template if:true={error}>  
+                {error}>                  
+            </template>  
+        </div>  
+    </lightning-card>
+</template>

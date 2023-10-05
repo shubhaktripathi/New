@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="parent to child component parentComponent" icon-name="custom:custom7">
+        <div>
+            <h3>Parent to Child Communication with string data</h3>
+            <c-child-component name={name} last-name={lastName}>
+            </c-child-component>
+        </div>
+
+        <div>
+            <h3> Parent to Child Communication with Array/Object data</h3>
+            <c-child-component user-details={userDetails}>
+            </c-child-component>
+        </div>
+
+        <div>
+            <h3> Parent to Child Communication on action at parent  </h3>
+            <lightning-input label="Name" type="number" value={percentage} onchange={changeHandler}></lightning-input>
+            <c-child-component percentage={percentage}>
+            </c-child-component>
+        </div>
+
+    </lightning-card>
+
+    <div class="margin-bottom-2rem">
+        <lightning-card title="Calling child method from parent" icon-name="custom:custom14">
+            <div class="slds-m-around_medium">
+                <div class="parent-wrapper">
+                    <button class="btn" onclick={changeColor}>Click me to change bar color</button>
+                    <div class="child-wrapper">
+                        <c-bar-child-component></c-bar-child-component>
+                    </div>
+                    
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

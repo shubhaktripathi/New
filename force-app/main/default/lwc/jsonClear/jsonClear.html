@@ -1,0 +1,18 @@
+<!--
+  @Shubhamm          : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-22-2023
+  @last modified by  : Shubham
+-->
+
+
+<template>
+    <lightning-input type="text" label="Enter Name" value={record.fields.Name} onchange={onchange}></lightning-input>
+    <lightning-input type="number" label="Enter Revenue" value={record.fields.AnnualRevenue} onchange={onchange1}></lightning-input>
+    <lightning-button 
+      variant="brand"
+      label=" Create Contact" 
+      onclick={handleClick} 
+    ></lightning-button>
+</template>

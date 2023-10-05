@@ -1,0 +1,101 @@
+@import "c/style";
+lightning-card {
+    --sds-c-card-color-background: #fff;
+    --sds-c-card-color-border: #fff;
+}
+
+.slds-select_container {
+    width: 350px;
+}
+
+.slds-select_container:after {
+    bottom: calc((1.75rem / 2) - -19px);
+}
+
+
+/* .steps {
+    position: relative;
+}
+
+.steps .progress_bar {
+    background: #3F2583;
+    Height: 6px;
+    position: absolute;
+    top: -16px;
+    width: 100%;
+    left: 0;
+    z-index: 99999;
+} */
+
+@media only screen and (max-width: 600px) {
+    .slds-select_container:after {
+        bottom: calc((1.75rem / 2) - -24px);
+    }
+    .slds-select_container {
+        width: 100%;
+    }
+}
+
+.error {
+    color: #D4351C;
+    border: 1px;
+    min-height: 2px;
+    min-width: 4px;
+}
+
+.errorProb {
+    color: #D4351C;
+    border: 1px;
+    size: 5px;
+    font: bold;
+    min-height: 2px;
+    min-width: 4px;
+}
+
+.noerror {
+    color: black;
+}
+
+.col {
+    color: black;
+}
+
+.help_sec1 {
+    height: 29px;
+    background-color: white;
+    border-bottom: none;
+    color: #1D70B8;
+    font-size: 18.57px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    border: none;
+    margin-left: -9px
+}
+
+.helpsec_val {
+    background: #fff;
+    color: #1D70B8;
+    border-bottom: none;
+}
+
+.help_sec p {
+    margin-left: 7.89px;
+}
+
+.occ_select_sec .occupation_select,
+.occ_select_sec .occupation_select1 {
+    /** for the dropdown indicator */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    .help_sec1 {
+        width: 201px;
+    }
+}

@@ -1,0 +1,14 @@
+.box_green{
+ 
+    height: 100px;
+    width: 100px;
+    border: 2px black;
+    color: green;
+}
+
+.box_red{
+    height: 100px;
+    width: 100px;
+    border: 1px black;
+    color: red;
+}

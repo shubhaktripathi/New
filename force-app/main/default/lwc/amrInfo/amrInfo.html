@@ -1,0 +1,63 @@
+<template>
+    <lightning-card class="mastercard">
+       <form>
+          <!-- <div class="slds-var-m-around_medium"> -->
+          <div class="slds-p-around_medium main_sec">
+             <div class="c-container">
+                <lightning-layout horizontal-align="center">
+                   <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+                      <button class="slds-button back_btn" onclick={back2}><i class="arrow left"></i>Back</button>
+                      <h1 class="main_heading">Automatic Mutual Recognition (AMR) Notification</h1>
+                      <div class="slds-text-longform">
+                         <h3 class="slds-text-heading_medium sub_heading"><strong>Before you start</strong></h3>
+                         <p class="list_text">To complete this form, you will need:</p>
+                         <ul>
+                            <li>Your home state licence details Including name, expiry date, and number, and any conditions</li>
+                            <li>Your contact details, including email, and phone number</li>
+                            <li>Your home address</li>
+                            <li>Your work address</li>
+                            <li>Images or scans of your licence or registration document(s)</li>
+                         </ul>
+                         <p class="desc_text">Completing this form will take about 10 minutes.
+                         </p>
+                         <div class="signinClass">
+                            <p class="slds-p-top_medium signed_in">Signed in as</p>
+                            <div class="name_sec">
+                               <img src={badge} alt="badge couldnt load" class="logo_img" style="margin-right: 8px;"/>
+                               <p>Daniel O'Hara</p>
+                              </div>
+                            <button class="slds-button_brand govuk-button" data-id='two' onclick={clickHandlerMaster}>Start form <i class="arrow2 right"></i> </button>
+                         </div>
+                         <!-- <button class="slds-button slds-button_brand" data-id='two' onclick={clickHandler}>Start form</button> -->
+                      </div>
+                      <div class="sign_out_sec">
+                        <a class="sign_out">Sign out</a>
+                      </div>
+                   </lightning-layout-item>
+                </lightning-layout>
+             </div>
+          </div>
+          <!-- </div> -->
+       </form>
+      
+       <!--fieldset class="slds-form-element">
+         <div class="slds-form-element__control radio_sec">
+           <span class="slds-radio">
+             <input type="radio" id="radio-69" value="radio-69" name="default" />
+             <label class="slds-radio__label" for="radio-69">
+               <span class="slds-radio_faux"></span>
+               <span class="slds-form-element__label">An individual person</span>
+             </label>
+           </span>
+           <span class="slds-radio">
+             <input type="radio" id="radio-70" value="radio-70" name="default" />
+             <label class="slds-radio__label" for="radio-70">
+               <span class="slds-radio_faux"></span>
+               <span class="slds-form-element__label">A company</span>
+             </label>
+           </span>
+         </div>
+       </fieldset-->
+      
+    </lightning-card>
+ </template>

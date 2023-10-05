@@ -1,0 +1,48 @@
+<template>
+    
+    <lightning-card title={PRODUCTDETAILS}  >
+  
+  <div class="hvr slds-p-around_medium lgc-bg">
+    <lightning-input type="text" label="Enter some text" placeholder="type here..." required="true" onchange={inputtext}></lightning-input>
+</div>
+
+<div slot="actions" > 
+    <lightning-button variant="brand" label="ADD TO WISHLIST" title="Primary action" onclick={handleClick} ></lightning-button>
+  </div>
+  <div  class="ABC slds-size_3-of-3">
+this is  first line
+  </div>
+  <div class="xyz slds-size_2-of-3">
+    this is the second line
+  </div>
+  <div class="pqr slds-size_3-of-3">
+    this is the third line
+  </div>
+  <div >
+    {PRODUCTDETAILS}
+  </div>
+
+        <div slot="footer" >
+            <lightning-button  variant="success" label="ADD TO CART" onclick={footermethd} ></lightning-button>
+            </div>
+
+            <template for:each={students} for:item="students">
+              <p key={students}></p>
+            {PRODUCTDETAILS}------------ {students}
+            </template>
+            <pre>
+
+
+            </pre>
+
+            <template iterator:it={Branches} >
+                    <p key={it.value}>
+                      {it.value}
+                    </p>
+
+            </template>
+      
+        </lightning-card>
+
+       
+</template>

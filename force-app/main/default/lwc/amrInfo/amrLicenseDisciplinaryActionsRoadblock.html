@@ -1,0 +1,22 @@
+<template>
+    <div class="error_page">
+        <div class="c-container">
+            <lightning-layout horizontal-align="center">
+               <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+        <button class="slds-button back_btn" data-id='seven' value="back"  onclick={roadBlockhanlder}>
+            <i class="arrow left"></i>Back
+            </button>
+            <h3 class="main_heading">Not eligible</h3>
+            <h6 class="errorsub_head">Your disciplinary history makes you not eligible for AMR</h6>
+            <p class="error_content">You are not eligible for Automatic Mutual Recognition if you are:</p>
+            <ul class="slds-list_dotted error_list">
+                <li>Subject to disciplinary action as it relates to this occupation, or </li>
+                <li>Personally subject to criminal, civil or disciplinary proceedings, including any preliminary investigations or action that might lead to disciplinary proceedings</li>
+            </ul>
+            <p class="error_content" style="margin-top:20px;">When these actions or proceedings have lapsed, you can come back to this form.</p>
+            <button class="error_btn step6error_btn"  data-id='one' onclick={roadBlockhanlder}>Back to website </button>
+            </lightning-layout-item>
+            </lightning-layout>
+            </div>
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="getterDemo" icon-name="custom:custom5">
+        <div class="slds-m-around_medium">
+            <h1>{getTitle}</h1>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-button label="on" variant="success" onclick={clickHanlder} >ON</lightning-button>
+            <lightning-button label="off" onclick={clickHanlder}>OFF</lightning-button>
+        </div>
+        <div class="slds-m-around_small">
+            <div class={boxStatus}>
+                {selectedbtn}
+            </div>
+        </div>
+    </lightning-card>
+</template>

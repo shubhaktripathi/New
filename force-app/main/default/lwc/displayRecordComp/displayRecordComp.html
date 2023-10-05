@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Account Record" >
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Industry</th>
+                  </tr>
+            </thead>            
+           <tbody>
+            <template for:each={recordList} for:item="ashi">
+               
+              
+<tr key={ashi.Id} >
+  <td> {ashi.Id} </td> 
+  <td>  {ashi.Name} </td> 
+  <td>  {ashi.Industry} </td> 
+</tr>
+               
+                   
+             </template>
+           </tbody>
+            
+          </table>
+      </lightning-card>
+</template>

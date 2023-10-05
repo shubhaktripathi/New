@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="New Car Details" >
+        <lightning-layout >
+    
+            <lightning-layout-item size="6">
+                <lightning-card title="Create New Car Record">
+                    <lightning-input name="CarName" label="Enter Car Name" onchange={handleCarDetails}></lightning-input>
+                     <lightning-input name="CarModel" label="Enter Car Model" onchange={handleCarDetails}></lightning-input>
+                     <lightning-input name="CarPrice" label="Enter Car Price" onchange={handleCarDetails}></lightning-input>
+                     <lightning-combobox name="CarType" label="Enter Car type" placeholder="Select type" value={value} onchange={handleCarDetails} options={datastore}></lightning-combobox>
+        <lightning-button label="Create Car" onclick={handleCarClick}></lightning-button>
+   
+        
+    
+                </lightning-card>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+</template>

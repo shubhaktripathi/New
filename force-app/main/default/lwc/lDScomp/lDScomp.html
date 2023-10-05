@@ -1,0 +1,17 @@
+<template>
+<lightning-card title="Account Details" >
+    <lightning-layout >
+
+        <lightning-layout-item size="6">
+            <lightning-card title="Create New Account">
+                <lightning-input name="AccountName" label="Enter Account Name" onchange={handleAccountDetails}></lightning-input>
+                 <lightning-input name="AccountPhone" label="Enter Account Phone" onchange={handleAccountDetails}></lightning-input>
+                 <lightning-button label="Create Account" onclick={handleAccountClick}></lightning-button>
+
+    
+
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+</lightning-card>
+</template>

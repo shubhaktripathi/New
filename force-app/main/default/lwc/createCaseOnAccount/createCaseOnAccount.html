@@ -1,0 +1,41 @@
+<template>
+    <template if:true={modal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <lightning-layout horizontal-align="center" pull-to-boundary="small" vertical-align="start">
+                        <lightning-layout-item>
+                            <lightning-icon icon-name="utility:case" alternative-text="Connected" size="small"></lightning-icon>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate slds-border_bottom">Create
+                                Case</h1>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-input name="Account Name" label="Account Name" read-only="true" value={accountName}
+                        class="slds-m-top_medium"></lightning-input>
+                    <lightning-input name="Symptom Description" label="Symptom Description" value={desc}
+                        onchange={onchangeHandler}></lightning-input>
+                    <lightning-input name="Repair Action Taken" label="Repair Action Taken" value={repair}
+                        onchange={onchangeHandler}></lightning-input>
+                    <lightning-input name="Troubleshooting Steps" label="Troubleshooting Steps" value={trouble}
+                        onchange={onchangeHandler}></lightning-input>
+                    <lightning-file-upload label="Attach receipt" name="fileUploader" accept={acceptedFormats}
+                        record-id={recordId} onuploadfinished={handleUploadFinished} multiple>
+                    </lightning-file-upload>
+                    <div class="slds-m-around_medium">
+                        <lightning-button label="cancel" onclick={handleCancel}
+                            class=" slds-m-around_x-small slds-m-top_medium">
+                        </lightning-button>
+                        <lightning-button label="Submit" variant="brand" onclick={onCLickHandler}
+                            class=" slds-m-around_x-small slds-m-medium">
+                        </lightning-button>
+                    </div>
+
+                </header>
+            </div>
+        </section>
+    </template>
+</template>

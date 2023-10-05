@@ -1,0 +1,85 @@
+@import "c/style";
+lightning-card {
+    --sds-c-card-color-background: #fff;
+    --sds-c-card-color-border: #fff;
+    --sds-c-card-boxshadow: none;
+}
+
+.help_sec1 {
+    width: 250px;
+    height: 29px;
+    background-color: white;
+    border-bottom: none;
+    color: #1D70B8;
+    font-size: 18.57px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    border: none;
+    margin-left: -9px
+}
+
+.help_sec_p {
+    color: #1D70B8;
+    /* border-bottom: 3px solid #1D70B8; */
+}
+
+.choosen_files {
+    padding: 0.5em 0;
+}
+
+.chosen_text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #313131;
+    padding-bottom: 0.7em;
+}
+
+.choosen_files .filename {
+    font-family: 'SourceSansPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #0B0C0C;
+}
+
+
+/* .upload_file {
+    font-family: 'SourceSansPro';
+    font-style: normal;
+    font-weight: 400!important;
+    font-size: 19px!important;
+    line-height: 25px!important;
+    color: #000000!important;
+}
+
+.upload_file .slds-button__icon,
+.upload_file .slds-medium-show {
+    display: none!important;
+}
+
+.upload_file .slds-button_neutral {
+    background: #F3F2F1!important;
+    border: 1px solid #8D8C8A!important;
+    border-radius: 2px!important;
+    color: #0B0C0C!important;
+} */
+
+.validation_box {
+    width: 27%;
+}
+
+.help_sec p {
+    margin-left: 7.89px;
+}
+
+@media only screen and (max-width: 600px) {
+    .validation_box {
+        width: 100%;
+    }
+}

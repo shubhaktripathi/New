@@ -1,0 +1,113 @@
+<template>
+   <progress value="9" max="12"></progress>
+   <lightning-card>
+      <div class="slds-p-around_medium main_sec">
+         <div class="c-container">
+
+            <lightning-layout horizontal-align="center">
+               <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10">
+
+                  <form method="post" enctype="multipart/form-data">
+                     <button class="slds-button back_btn" data-id='nine' onclick={backHandler}>
+                        <i class="arrow left"></i>Back
+                     </button>
+                     <div if:true={fileErr} class="validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                        <ul>
+                           <p class="error_text">Upload at least one file</p>
+                        </ul>
+
+                     </div>
+                     <div>
+                        <h3 class="step_heading"><strong>Step 9 of 11</strong></h3>
+                     </div>
+                     <h1 class="main_heading slds-var-p-top_x-small">Evidence of your licence or document(s)</h1>
+                     <p class="discp_text slds-var-p-top_small slds-p-bottom_small licetypesubheading">Upload your
+                        evidence of your licence or registration document(s)</p>
+                     <p class="discp_text slds-var-p-top_small slds-p-bottom_small licetypesubheading">If required by <a
+                           class="link_text"><u>ACT licence rules</u></a>, also upload evidence of:</p>
+                     <ul class="slds-list_dotted step1_list">
+                        <li>Your Working With Vulnerable Persons registration</li>
+                        <li>How you meet Public Protection Requirements</li>
+                     </ul>
+                     <br>
+                     <button class={fileHelpClass} onclick={showEvidence}>
+
+                        <template if:true={icon2}>
+
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z">
+                              </path>
+                           </svg>
+                        </template>
+                        <template if:false={icon2}>
+
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
+                              </path>
+                           </svg>
+                        </template>
+                        <p class={fileHelpClass1}> If your licence is a card </p>
+                     </button>
+                     <template if:true={evidence}>
+                        <div class="vl">
+                           <p class="slds-var-p-top_medium" style="color:#000;">You must include both the front and the
+                              back of any licence,
+                              even if the back has no additional information.</p>
+                        </div>
+                     </template>
+                     <br>
+                     <div
+                        class="upload_bg slds-var-p-top_medium slds-var-p-bottom_medium slds-var-p-left_medium slds-var-p-right_medium">
+                        <h3 class="sub_heading slds-var-p-bottom_large"><strong>Choose and upload files</strong></h3>
+                        <div class={fileErrCss}>
+                           <p if:true={fileErr} class="error error_label slds-var-p-bottom_medium">Upload at least one
+                              file</p>
+                           <lightning-input type="file" label="Upload Files" onchange={fileUploadHandler} multiple
+                              class="upload_file">
+                           </lightning-input>
+                           
+                        </div>
+
+                        <!--lightning-file-upload
+        label="Upload files"
+        name="fileUploader"
+        onchange={fileUploadHandler}
+        multiple>
+    </lightning-file-upload-->
+                        <br>
+                        <template if:true={filePreviewlenght}>
+                           <p class="chosen_text">Chosen files ({filePreviewlenght})</p>
+                           <template for:each={filePreview} for:item="file">
+                              <div key={file.id} class="slds-border_bottom slds-wrap choosen_files">
+                                 <lightning-layout multiple-rows>
+                                    <lightning-layout-item size="9">
+                                       <div class="slds-text-align_left">
+                                          <p class="filename">{file.label}</p>
+                                       </div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="3">
+                                       <div class="slds-text-align_right">
+                                          <p class="filename">{file.size}kb</p>
+                                       </div>
+                                    </lightning-layout-item>
+                                 </lightning-layout>
+
+                              </div>
+                           </template>
+                        </template>
+                        <button class="govuk-button slds-button_brand" data-id="eleven" onclick={clickHandler}>Upload
+                           and continue <i class="arrow2 right"></i></button>
+
+                     </div>
+                  </form>
+               </lightning-layout-item>
+            </lightning-layout>
+         </div>
+      </div>
+   </lightning-card>
+</template>

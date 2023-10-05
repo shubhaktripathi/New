@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="templateLooping" icon-name="custom:custom5">
+        <div class="slps-p-around_medium slds-m-left_large">
+            <p class="slds-m-left_large">Array Looping</p>
+            <template for:each={carList} for:item="car">
+                <li key={car}>
+                    <b>
+                        <a href="#">{car}</a>
+                    </b>
+                </li>
+            </template>
+        </div>
+        <br>
+        <p class="slds-m-left_large">Object Looping</p>
+        <div class="slps-p-around_medium slds-m-left_large">
+            <template for:each={carWebs} for:item="car">
+                <li key={car.link}>
+                    <b>
+                        <a href={car.link}>{car.name}</a>
+                    </b>
+                </li>
+            </template>
+        </div>
+    </lightning-card>
+</template>

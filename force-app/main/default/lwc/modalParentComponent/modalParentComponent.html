@@ -1,0 +1,42 @@
+<template>
+
+    <lightning-card title="modalParentComponent (No data Passed)" icon-name="custom:custom8">
+        <div>
+            <lightning-button label="Open Modal" onclick={showHandler}>
+            </lightning-button>
+            <template if:true={showModal}>
+                <c-modal-child-component header-text="Message!!" body-text="This model is a child component, triggered from parent and on Click of close button
+                 it will dispatch an event to parent" onclose={modalCloseHandler}>
+                </c-modal-child-component>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="modalParentComponent (With Data)" icon-name="custom:custom9">
+        <div class="slds-m-around_medium">
+            <h3>
+                select your favourite cricketer in child component and see details in
+                parent component
+            </h3>
+            <div class="flex">
+                <p>I am parent component</p>
+                <c-navbar-child-component nav-list={navList} onselection={selectedNavHandler}></c-navbar-child-component>
+        
+                <template if:true={selectedPlayer}>
+                    <div class="card">
+                        <div>
+                            <img src={selectedPlayer.imgUrl} alt="Avatar" style="width:100%" />
+                        </div>
+                        <div class="container">
+                            <p><strong>Player Name:</strong> {selectedPlayer.name}</p>
+                            <p><strong>Ranking:</strong> {selectedPlayer.position}</p>
+                            <p><strong>country:</strong> {selectedPlayer.country}</p>
+                            <p><strong>Rating:</strong> {selectedPlayer.rating}</p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+
+</template>

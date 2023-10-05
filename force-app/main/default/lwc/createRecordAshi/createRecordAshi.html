@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-11-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Account Details" >
+        <lightning-layout >
+    
+            <lightning-layout-item size="6">
+                <lightning-card title="Create New Account">
+                    <lightning-input clas="" name="AccountName" label="Enter Account Name"   value={accountName} onchange={handleAccountDetails}></lightning-input>
+                     <lightning-input name="AccountPhone" label="Enter Account Phone"  value={accountPhone} onchange={handleAccountDetails}></lightning-input>
+                     <lightning-input name="AccountInd" label="Enter Account Phone"  value={AccountInd} onchange={handleAccountDetails}></lightning-input>
+                     <lightning-button label={button} onclick={handleAccountClick}></lightning-button>
+
+                     {val}
+                     {obj.age}
+                </lightning-card>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    </template>

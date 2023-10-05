@@ -1,0 +1,17 @@
+<template>
+    <div class="error_page">
+        <div class="c-container">
+            <lightning-layout horizontal-align="center">
+               <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+        <button class="slds-button back_btn" data-id='two' value="back"  onclick={roadBlockhanlder}>
+            <i class="arrow left"></i>Back
+            </button>
+            <h3 class="main_heading">Not eligible</h3>
+            <h6 class="errorsub_head">Companies are not eligible for Automatic Mutual Recognotion.</h6>
+            <p class="error_content">Only individual persons can have their licence recognised in the ACT through Automatic Mutual Recognition.</p>
+            <button class="error_btn" data-id='one' onclick={roadBlockhanlder}>Back to website </button>
+            </lightning-layout-item>
+            </lightning-layout>
+            </div>
+    </div>
+</template>

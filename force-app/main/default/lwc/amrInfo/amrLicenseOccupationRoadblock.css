@@ -1,0 +1,12 @@
+@import "c/style";
+body {
+    background: #F0F3F5;
+}
+
+.This {
+    background: #F0F3F5;
+}
+
+:host {
+    --sds-c-card-color-background: #F0F3F5;
+}

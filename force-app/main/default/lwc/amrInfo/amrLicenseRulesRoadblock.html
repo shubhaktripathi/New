@@ -1,0 +1,19 @@
+<template>
+    <div class="error_page">
+        <div class="c-container">
+            <lightning-layout horizontal-align="center">
+               <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+        <button class="slds-button back_btn" data-id='six' value="back"  onclick={roadBlockhanlder}>
+            <i class="arrow left"></i>Back
+            </button>
+            <h3 class="main_heading">Not eligible</h3>
+            <h6 class="errorsub_head">You must meet additional ACT rules first.</h6>
+            <p class="error_content">You will need to look into which ACT licence rules apply to you.</p>
+            <p class="error_link_sec"><a class="error_link">Learn more about ACT licence rules</a></p>
+            <p class="error_content">Once you meet the additional rules, you can come back to this form.</p>
+            <button class="error_btn"  data-id="one" onclick={roadBlockhanlder}>Back to website </button>
+            </lightning-layout-item>
+            </lightning-layout>
+            </div>
+    </div>
+</template>

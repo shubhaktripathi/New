@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="getPickListValuesDemo" class="slds-p-around_medium ">
+       <div class="slds-p-around_medium slds-m_around_medium">
+       <lightning-combobox
+        name="Lead Source"
+        label="Lead"
+        placeholder="Select"
+        options={result.values}
+        onchange={handleChange} ></lightning-combobox>
+       </div> 
+       <p>
+        Selected Value is <strong>{pickListvalue}</strong>
+       </p>
+    </lightning-card>
+</template>

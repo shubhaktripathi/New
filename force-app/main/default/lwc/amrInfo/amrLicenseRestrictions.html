@@ -1,0 +1,88 @@
+<template>
+   <progress value="7" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+
+                     <button data-id="seven" onclick={backHandler} class="slds-button back_btn"><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={conErr} class="error validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                        <p class="error_text"> Select yes if you have any conditions applied to your licence</p>
+
+                     </div>
+                     <div if:true={conErr1} class="validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                           <p class="error_text">Enter the condition applied to your licence</p>
+                     </div>
+                     <div>
+                        <h3 class="step_heading"><strong>Step 7 of 11</strong></h3>
+                     </div>
+                     <h1 class="main_heading slds-var-p-top-x-small">Licence restrictions (Conditions)</h1>
+                     <h3 class="slds-p-bottom_medium discp_text">Any restrictions or conditions your home State or
+                        Territory has applied to your licence will also apply in the ACT.</h3>
+                     <h3 class="slds-p-bottom_medium discp_text">For example, you may only be allowed to practice during
+                        daylight hours.</h3>
+
+                     <div class={conErrCss}>
+                        <div class={conErrCss1}>
+
+                           <h1 class="sub_heading slds-var-m-top_medium slds-var-p-bottom_large">Does your licence have
+                              any restrictions applied?</h1>
+
+                           <p if:true={conErr} class="error error_label slds-var-p-bottom_medium"> Select yes if you
+                              have any conditions applied to your licence</p>
+                           <p if:true={conErr1} class="error error_label slds-var-p-bottom_medium"> Enter the condition
+                              applied to your licence </p>
+                           <div>
+                              <!--div class="licence_territory_radio">
+                                 <input type="radio" id="y" name="drone" value="yes" onchange={condHandler}>
+                                 <label for="huey">Yes</label>
+                              </div-->
+                              <fieldset class="slds-form-element" style="margin-bottom: 0;">
+                                 <div class="slds-form-element__control radio_sec" onchange={condHandler}>
+                                   <span class="slds-radio">
+                                     <input type="radio" id="y" value="yes" name="drone" />
+                                     <label class="slds-radio__label" for="y">
+                                       <span class="slds-radio_faux"></span>
+                                       <span class="slds-form-element__label">Yes</span>
+                                     </label>
+                                   </span>
+                                 </div>
+                               </fieldset>
+                              <template if:true={licenceCond}>
+                                 <div class="vl licence_cond_vl" style="color:#000;margin-left: 1em;margin-bottom: 1.9em;height: 4.8em;padding: 0 1.5rem;">
+                                    <label for="name" class="slds-var-p-bottom_medium">What are the conditions?</label>
+                                    <br>
+                                    <input type="text" id="name" onkeyup={cHandler3} name="name" required class={conInputCss}>
+                                 </div>
+                              </template>
+<fieldset class="slds-form-element">
+    <div class="slds-form-element__control radio_sec" onchange={condHandler}>
+        <span class="slds-radio">
+                                                                                                <input type="radio" id="n" value="no" name="drone" />
+                                                                                                <label class="slds-radio__label" for="n">
+                                                                                                   <span class="slds-radio_faux"></span>
+        <span class="slds-form-element__label">No</span>
+        </label>
+        </span>
+    </div>
+</fieldset>
+</div>
+</div>
+
+</div>
+<br>
+<button data-id="nine" onclick={clickHandler} class="govuk-button slds-button_brand">Continue
+                              <i class="arrow2 right"></i></button>
+</lightning-layout-item>
+</lightning-layout>
+</div>
+</div>
+</form>
+</lightning-card>
+</template>

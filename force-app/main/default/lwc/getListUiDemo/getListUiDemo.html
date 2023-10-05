@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="getListUiDemo" icon-name="custom:custom12">
+        <table>
+            <thead>
+                <tr>
+                    <th>Contact Id</th>
+                    <th>Contact Name</th>
+                    <th>Contact Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={conResult} for:item="con">
+                    <tr key={con.id}>
+                        <td> {con.id}</td>
+                        <td> {con.fields.Name.value}</td>
+                        <td> {con.fields.Phone.Value}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+      
+
+    </lightning-card>
+</template>

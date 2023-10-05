@@ -1,0 +1,36 @@
+<template>
+    <div style="background-color: rgba(241, 236, 255, 1);">
+        <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+                     <div class="icon_sec">
+                       <svg style="color: rgb(63, 37, 131);" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+          viewBox="0 0 32 32">
+          <path
+             d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z"
+             fill="#3f2583"></path>
+       </svg>
+      </div>
+       <p class="heading">Notification submitted </p>
+       <div class="ref_bg">
+          <p class="no_heading">Your reference number</p>
+          <p class="unique">&#60;unique number&#62;</p>
+       </div>
+       <p class="refdesc_text"> You will recieve an email soon with your registration confirmation.</p>
+       <p class="subHeading"> What happens next?</p>
+     
+       <li class="ref_list" style="font-weight:700;"> You can begin practicing under your AMR immediately </li>
+       <li class="ref_list">We will process your notification in the background, and contact you if we need to make changes or apply conditions to your approval</li>
+       <br> <br>
+       <p class="subHeading">
+          Who can I contact about my submission?
+       </p>
+       <p class="refdesc_text"> Using your reference number listed above, you can <a class="contact_link">contact us </a>via phone, web form or in person.</p>
+       <button class="error_btn" data-id="one" onclick={roadBlockhanlder}>Exit to act.gov.au </button>
+    </lightning-layout-item>
+</lightning-layout>
+    </div>
+    </div>
+    </div>
+    </template>

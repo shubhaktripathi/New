@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="ConditionalRendering" icon-name="custom:custom4">
+        <lightning-button label={buttonName}  onclick={clickHandler} variant="success">
+        </lightning-button>
+<template if:true={text}>
+    Hey! Here is your text.
+</template>
+    </lightning-card>
+</template>

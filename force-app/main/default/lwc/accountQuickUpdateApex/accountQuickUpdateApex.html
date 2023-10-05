@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-29-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+        <div slot="accountQuickUpdateApex">
+            Card Title
+        </div>
+        <div slot="footer">
+            <lightning-button variant="success" label="Save" onclick={handleClick}></lightning-button>
+        </div>
+        <div>
+
+            <lightning-input type="text" variant="standard" name="Name" label="Name" value={acc.Name}
+                onchange={changeHandler}></lightning-input>
+            <lightning-input type="email" label="website address" name="website" onchange={changeHandler}
+                value={acc.Website}></lightning-input>
+            <lightning-input type="phone" name="Phone" label="Enter Phone number" value={acc.Phone}
+                onchange={changeHandler}></lightning-input>
+        </div>
+    </lightning-card>
+
+</template>

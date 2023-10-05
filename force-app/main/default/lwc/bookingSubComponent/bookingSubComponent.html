@@ -1,0 +1,32 @@
+<!--
+  @Shubhamm          : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-30-2023
+  @last modified by  : Shubham
+-->
+<template>
+    <lightning-card title="Receive Value" name="Card">
+       
+        <table>
+            <thead>
+                <tr>
+                    <td>Booking ID</td>
+                    <td>Start Date</td>
+                    <td>End Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={resultArray} for:item="S">
+                    <tr key={S.BookingId}>
+                        <td>{S.BookingId}</td>
+                        <td>{S.BookingStartDate}</td>
+                        <td>{S.BookingEndDate}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+    </lightning-card>
+
+</template>

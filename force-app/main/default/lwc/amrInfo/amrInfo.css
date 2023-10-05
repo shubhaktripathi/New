@@ -1,0 +1,5 @@
+@import "c/style";
+lightning-card {
+    --sds-c-card-color-background: #fff;
+    --sds-c-card-color-border: #fff;
+}

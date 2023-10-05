@@ -1,0 +1,39 @@
+<template>
+    <template if:false={logocolor}>
+        <div class="c-container logo_container">
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10">
+
+
+                    <div class="myColor" style="background-color:#f0f3f5">
+
+                        <img src={logotransparent} alt="logo couldnt load" class="logo_img" />
+
+                    </div>
+
+
+
+
+
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </template>
+
+    <template if:true={logocolor}>
+        <div class="c-container logo_container" style="background-color:#F1ECFF">
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10">
+
+
+                    <div class="myColor1" style="background-color:#F1ECFF">
+
+                        <img src={logotransparent} alt="logo couldnt load" class="logo_img" />
+
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+
+    </template>
+</template>

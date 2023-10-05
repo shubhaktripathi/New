@@ -1,0 +1,8 @@
+<template>
+    <lightning-card variant="Narrow" title="createRecordUiapi" icon-name="standard:account">
+        <lightning-input name="Name" label="Enter Account Name" type="text " value={formsfields.name} onchange={changeHandler}></lightning-input>
+        <lightning-input name="Type" label="Enter Type Name" type="text " value={formsfields.type} onchange={changeHandler}></lightning-input>
+        <lightning-input name="Phone" label="Enter Phone Name" type="text " value={formsfields.Phone} onchange={changeHandler}></lightning-input>
+    <lightning-button  label="Save" title="titleName" onclick={handleClick}></lightning-button>
+    </lightning-card>
+</template>

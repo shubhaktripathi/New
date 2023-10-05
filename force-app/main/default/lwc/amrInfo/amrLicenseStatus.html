@@ -1,0 +1,76 @@
+<template>
+   <progress value="4" max="12"></progress>
+   <lightning-card>
+      <form>
+         <div class="slds-p-around_medium main_sec">
+            <div class="c-container">
+
+               <lightning-layout horizontal-align="center">
+                  <lightning-layout-item size="12" small-device-size="12" medium-device-size="10" large-device-size="10" >
+                     <button data-id="four" onclick={backHandler} class="slds-button back_btn"><i
+                           class="arrow left"></i>Back</button>
+                     <div if:true={statusErr} class="error validation_box">
+                        <h4 class="val_heading">There is a problem</h4>
+                        <p class="error_text">Select yes if your licence is cancelled or suspended</p>
+                     </div>
+                     <div>
+                        <h3 class="step_heading">Step 4 of 11</h3>
+                     </div>
+                     <h1 class="main_heading slds-var-p-top-x-small">Is your licence suspended or cancelled?</h1>
+                     <div class={statusCss}>
+                        <div if:true={statusErr} class="error error_label slds-var-p-bottom_medium"> Select yes if your licence is cancelled or suspended</div>
+                        <form>
+                           <!--div onchange={statusHandler} class="licence_territory_radio">
+                              <input type="radio" id="1" name="license" value="Yes,cancelled"
+                                 style="margin-bottom: 0.7em;">
+                              <label for="1">Yes, cancelled</label>
+                              <br><br>
+                              <input type="radio" id="2" name="license" value="Yes,suspended"
+                                 style="margin-bottom: 0.7em;">
+                              <label for="2">Yes, suspended</label>
+                              <br><br>
+                              <input type="radio" id="3" name="license" value="no" style="margin-bottom: 0.7em;">
+                              <label for="3">No</label>
+                           </div-->
+                           <fieldset class="slds-form-element">
+                              <div class="slds-form-element__control radio_sec" onchange={statusHandler}>
+                                <span class="slds-radio">
+                                  <input type="radio" id="1" value="Yes,cancelled" name="license" />
+                                  <label class="slds-radio__label" for="1">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">Yes, cancelled</span>
+                                  </label>
+                                </span>
+
+                                <span class="slds-radio">
+                                  <input type="radio" id="2" value="Yes,suspended" name="license" />
+                                  <label class="slds-radio__label" for="2">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">Yes, suspended</span>
+                                  </label>
+                                </span>
+
+                                <span class="slds-radio">
+                                 <input type="radio" id="3" value="no" name="license" />
+                                 <label class="slds-radio__label" for="3">
+                                   <span class="slds-radio_faux"></span>
+                                   <span class="slds-form-element__label">No</span>
+                                 </label>
+                               </span>
+                              </div>
+                            </fieldset>
+                      
+                        </form>
+                     </div>
+                      
+                        <button data-id="six" onclick={clickHandler}
+                           class="govuk-button slds-button_brand ">Continue <i
+                              class="arrow2 right"></i></button>
+
+                  </lightning-layout-item>
+               </lightning-layout>
+            </div>
+         </div>
+      </form>
+   </lightning-card>
+</template>

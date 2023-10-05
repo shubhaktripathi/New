@@ -1,0 +1,11 @@
+.class1 {
+    background-color: aqua;
+    color: blueviolet;
+    border:.5rem
+
+}
+
+.button{
+    --slds-c-button-brand-color-background:red;
+    --slds-c-button-radius-border:.25rem;
+}
