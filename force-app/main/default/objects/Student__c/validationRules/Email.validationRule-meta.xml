@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(CONTAINS( Student_Email__c , &apos;@gmail.com&apos;))</errorConditionFormula>
+    <errorDisplayField>Student_Email__c</errorDisplayField>
+    <errorMessage>Email  Format</errorMessage>
+</ValidationRule>
