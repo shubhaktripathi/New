@@ -2,7 +2,7 @@ import { LightningElement, track } from 'lwc';
 
 export default class LifeCycleHooksPare extends LightningElement {
 
-    message = 'Updated count will appear here!!';
+    message = 'Updated count will appear here!!!';
     show = true;
 
     render(){
